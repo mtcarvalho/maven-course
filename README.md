@@ -29,3 +29,9 @@ mvn --version   // maven 3.6.0 or higher
 `jar cf myjar.jar HelloWorld.class` packages the bytecode class file to a jar file
 
 `java -classpath myjar.jar HelloWorld` executes the java class file out of the jar file
+
+> Commands after adding lib folder
+
+`javac -classpath .\lib\* HelloWorld.java` includes everything in `lib` folder when compiling the source code
+
+`java -classpath .\lib\*;. HelloWorld` picks everything in lib and root folder, and runs the code
