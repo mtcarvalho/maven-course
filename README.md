@@ -64,3 +64,13 @@ mv HelloWorld.java ./src/main/java
 mvn clean package
 mvn clean
 ```
+
+- Commands to run the app with `commons-lang3` dependency:
+
+```
+mvn clean package
+```
+
+Here, the dependency has not been included in the jar - maven generated a **thin** jar. The dependency was included at compile time, but has not been included in the build artifact.
+
+In **fat** jars, it is possible to see the jars listed.
