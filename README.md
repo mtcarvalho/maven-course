@@ -56,7 +56,7 @@ In **fat** jars, it is possible to see the jars (dependencies) listed.
 
 - Commands when using `pom.xml` file
 
-`mvn package`: creates a `target` folder without `.class` files.
+`mvn package`: creates a `target` folder without `.class` files.  
 `mvn clean`: deletes the `target` folder (if exists)
 
 #### Tips & Tricks
