@@ -18,11 +18,15 @@ javac --version // javac 11
 mvn --version   // maven 3.6.0 or higher
 ```
 
-### Section 02: Getting Started
+### Hello World App
+
+#### Concepts
+
+In a **thin** jar, dependencies are not included. With `mvn clean package`, the dependency is included at compile time, but is not included in the build artifact.
+
+In **fat** jars, it is possible to see the jars (dependencies) listed.
 
 #### Highlights
-
-- In this section, it is showed a minimal version of `pom.xml` file.
 
 - Below are maven coordinates:
 
@@ -34,43 +38,27 @@ mvn --version   // maven 3.6.0 or higher
 
 #### Commands
 
+- Commands to compile, package & run the app
+
 `javac HelloWorld.java` compiles the source code to `HelloWorld.class` bytecode file
 
 `java HelloWorld` runs the code
 
 `jar cf myjar.jar HelloWorld.class` packages the bytecode class file to a jar file
 
-`java -classpath myjar.jar HelloWorld` executes the java class file out of the jar file
+`java -classpath myjar.jar HelloWorld` runs the java class file out of the jar file
 
-- Commands after adding lib folder
+- Commands when using lib folder to store jar files (app dependencies)
 
 `javac -classpath ./lib/* HelloWorld.java` includes everything in `lib` folder when compiling the source code
 
 `java -classpath "./lib/*;/." HelloWorld` picks everything in lib and root folder, and runs the code
 
-- Commands after adding `pom.xml` file
+- Commands when using `pom.xml` file
 
-`mvn clean` clean out the environment
+`mvn package`: creates a `target` folder without `.class` files.
+`mvn clean`: deletes the `target` folder (if exists)
 
-`mvn package` says there is no sources to compile. It creates a `target` folder without `.class` files.
+#### Tips & Tricks
 
-`mvn clean` again deletes the `target` folder.
-
-To compile the app:
-
-```
-mkdir src/main/java
-mv HelloWorld.java ./src/main/java
-mvn clean package
-mvn clean
-```
-
-- Commands to run the app with `commons-lang3` dependency:
-
-```
-mvn clean package
-```
-
-Here, the dependency has not been included in the jar - maven generated a **thin** jar. The dependency was included at compile time, but has not been included in the build artifact.
-
-In **fat** jars, it is possible to see the jars listed.
+- Add dummy files for github sync - it ignores empty directories. Here, we created on `hello-world/src/main/resources/application.properties` and `hello-world/src/test/java/package-info.java`
