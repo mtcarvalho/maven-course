@@ -4,9 +4,9 @@
 
 ## System Requirements
 
-- IntelliJ or Eclipse or NetBeans IDE
+- IntelliJ (recommended) or Eclipse or NetBeans IDE
 - Java 11 or Higher Required 
-- Must have JDK Installed
+- Must have JDK Installed  
     Oracle or OpenJDK is okay. Oracle licensing of Java **does** permit for development use.
 - Apache Maven 3.6.0 or Higher Required
 
